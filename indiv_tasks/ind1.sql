@@ -1,6 +1,7 @@
 .mode box
 .headers on
-SELECT country, Yearly_Change
-FROM world_population
-ORDER BY Yearly_Change DESC
-LIMIT 10;
+SELECT country, SUM(suicides_no)
+FROM sui
+GROUP BY country
+ORDER BY SUM(suicides_no) DESC
+LIMIT 10

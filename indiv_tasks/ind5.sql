@@ -1,5 +1,7 @@
 .mode box
 .headers on
-SELECT count(*) as "Количество стран в мире с долей населения более 0.5"
-FROM world_population
-WHERE world_share >= 0.5
+SELECT sex, SUM(suicides_no)
+FROM sui WHERE sex='female' and year='2010' and country='Russian Federation'
+UNION
+SELECT sex, SUM(suicides_no)
+FROM sui WHERE sex='male' and year='2010' and country='Russian Federation'

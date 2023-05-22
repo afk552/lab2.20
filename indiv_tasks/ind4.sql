@@ -1,7 +1,8 @@
 .mode box
 .headers on
-SELECT country, fert_rate, med_age, population
-FROM world_population
-WHERE med_age > 40
-ORDER BY fert_rate DESC
-LIMIT 10;
+SELECT country, population, suicides_100k_pop
+FROM sui
+WHERE year='2013'
+GROUP BY country
+ORDER BY suicides_100k_pop DESC
+LIMIT 10
